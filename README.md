@@ -7,7 +7,7 @@ Este repositório documenta a automação de servidores na GCP utilizando Ansibl
 
 ## Ambiente
 
-- **Instâncias AWS:**
+- **Instâncias GCP:**
   - **ControlNodeAnsible:** Gerencia os servidores.
   - **ServidorNginx1:** Destinado à instalação do Nginx.
 - **Chaves de Acesso:** `chaveControlNode`, `ServidorNginx1` e `ServidorNginx2`
