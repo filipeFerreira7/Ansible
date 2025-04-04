@@ -15,19 +15,20 @@ Este repositório documenta a automação de servidores na GCP utilizando Ansibl
 ## Principais Passos
 
 1. **Configuração Local e Acesso:**
-   - Transferência das chaves via `scp`
+   - Transferência das chaves via `ssh manual`
    - Conexão via SSH:
      ```bash
-     ssh -i "chaveControlNode.pem" ubuntu@ec2-56-124-67-85.sa-east-1.compute.amazonaws.com
+     ssh root@35.224.35.219
+     ssh root@35.224.83.210
      ```
 
 2. **Instalação e Configuração do Ansible:**
    - Atualização do sistema e instalação do Ansible:
      ```bash
-     sudo apt update && sudo apt upgrade -y
-     sudo apt install software-properties-common
-     sudo add-apt-repository --yes --update ppa:ansible/ansible
-     sudo apt install ansible
+     apt update && sudo apt upgrade -y
+     apt install software-properties-common
+     add-apt-repository --yes --update ppa:ansible/ansible
+     apt install ansible
      ansible --version
      ```
    - Configuração do arquivo `/etc/ansible/hosts`:
@@ -39,7 +40,7 @@ Este repositório documenta a automação de servidores na GCP utilizando Ansibl
 
 3. **Execução dos Playbooks:**
    - **Nginx:**
-     - Arquivo: `playbook-nginx.yml`
+     - Arquivo: `playbooks-nginx.yml`
      ```yaml
      ---
      - name: Instalar o nginx
